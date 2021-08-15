@@ -1,0 +1,43 @@
+<!-- <odoo>
+    <data>
+        <record id="custom_report_sale_details" model="ir.ui.view">
+            <field name="name">custom.report.sale.details</field>
+            <field name="inherit_id" ref="point_of_sale.report_saledetails" />
+            <field name="arch" tyoe="xml">
+                <xpath expr="//div[@class='table table-sm']" position="replace">
+                    <p>Test</p>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo> -->
+<odoo>
+    <template id="custom_report_sale_details" inherit_id="point_of_sale.report_saledetails">
+        <xpath expr="//table[@class='table table-sm']" position="replace">
+            <thead><tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price Unit</th>
+                <th>Sale Profit</th>
+            </tr></thead>
+            <tbody>
+                <tr t-foreach="products" t-as="line">
+                    <t t-set="internal_reference" t-value="line['code'] and '[%s] ' % line['code'] or ''"/>
+                    <td><t t-esc="internal_reference"/><t t-esc="line['product_name']"/></td>
+                    <td>
+                        <t t-esc="line['quantity']"/>
+                        <t t-if="line[&quot;uom&quot;] != &quot;Units&quot;">
+                            <t t-esc="line[&quot;uom&quot;]"/> 
+                        </t>
+                    </td>
+                    <td>
+                        <t t-esc="line[&quot;price_unit&quot;]"/>
+                    <t t-if="line[&quot;discount&quot;] != 0">
+                        Disc: <t t-esc="line[&quot;discount&quot;]"/>%
+                    </t>
+                    </td>
+                </tr>
+            </tbody>
+        </xpath>
+    </template>
+</odoo>

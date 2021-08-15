@@ -1,9 +1,7 @@
 {
-    'name': 'Real Estate',
+    'name': 'Custom Utility Report',
+    'description': "",
     'data': [
-        'security/ir.model.access.csv',
-        #'views/estate_property_views.xml',
-        # 'views/estate_menus.xml'
-        'views/report.xml'
+        'views/custom_report_sale_details.xml'
     ]
 }
