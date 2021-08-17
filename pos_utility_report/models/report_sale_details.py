@@ -2,7 +2,7 @@ from odoo import api, fields, models
 
 
 class ReportSaleDetails(models.AbstractModel):
-
+   
     _inherit = 'report.point_of_sale.report_saledetails'
 
     @api.model
