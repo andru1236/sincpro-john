@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <template id="custom_css" inherit_id="sale.report_saleorder_document" >
+            <xpath expr="." position="after" >
+                <link rel="stylesheet" type="text/css" href="/ks_pos_low_stock_alert/static/src/css/Ks_low_stock.css"/>
+            </xpath>
+        </template>
+</odoo>
