@@ -3,6 +3,25 @@
     @Email: sales@ksolves.com
 */
 
+.pos .order{
+    font-size: 18px;
+}
+
+.pos .product{
+    font-size: 14px
+}
+
+.pos .category-simple-button{
+    font-size: 16px
+}
+
+.pos .breadcrumb-button{
+    font-size: 16px
+}
+
+.pos .order-button.selected{
+    font-size: 15px
+}
 .pos .quantity-count{
     color: white;
     line-height: 13px;
@@ -47,7 +66,7 @@
 }
 
 .pos .text{
-  font-size: 15px;
+  font-size: 18px;
   color: black;
   line-height: 1;
   text-align: center;
